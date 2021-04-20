@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300&display=swap');
+body {
+   font-family: 'MuseoModerno', cursive;
+   user-select: none;
+   margin: 0;
+}
+#background {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-image: url("images/bench.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+   transition-duration: 3s;
+}
+@keyframes medfx1 {
+   from {
+      top: -50px; /* la moitie du height car on fait un translate de -50% */
+   }
+   to {
+      top: 50%;
+   }
+}
+@keyframes medfx2 {
+   from {
+      top: 50%;
+   }
+   to {
+      top: calc(100% + 50px); /* toute la page + la moitie de son height. */
+   }
+}
+#med {
+   /* Afficher le contenu au milieu */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   /* Afficher ce div au milieu de la page */
+   position: fixed;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   /* Taille du div */
+   width: 400px;
+   height: 100px;
+   /* Border */
+   border: 1px solid teal;
+   border-radius: 20px;
+   box-sizing: border-box;
+   /* Couleurs */
+   background-color: rgba(0,0,0,0.7);
+   color: teal;
+   /* Animation: quand ca bouge de haut en bas */
+   animation-duration: 2s;
+   animation-fill-mode: forwards; /* Ca garde le div à la position finale de l'animation */
+}
+#progress { /* La bare de progres, son width change dynamiquement */
+   transition-duration: 3s;
+   position: fixed;
+   height: 12px;
+   bottom: 0;
+   background-color: teal;
+}
+input,button {
+   font-family: 'MuseoModerno', cursive;
+   text-align: center;
+   background-color: rgba(0,0,0,0);
+   color: teal;
+   outline: none;
+   border: 1px solid teal;
+}
