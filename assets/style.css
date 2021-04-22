@@ -10,11 +10,10 @@ body {
    bottom: 0;
    left: 0;
    right: 0;
-   background-image: url("images/bench.jpg");
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;
-   transition-duration: 3s;
+   transition-duration: 1s;
 }
 @keyframes medfx1 {
    from {
@@ -35,8 +34,6 @@ body {
 #med {
    /* Afficher le contenu au milieu */
    display: flex;
-   align-items: center;
-   justify-content: center;
    /* Afficher ce div au milieu de la page */
    position: fixed;
    left: 50%;
@@ -45,28 +42,35 @@ body {
    width: 400px;
    height: 100px;
    /* Border */
-   border: 1px solid teal;
+   border: 1px solid;
    border-radius: 20px;
    box-sizing: border-box;
-   /* Couleurs */
+   /* Couleur de fond */
    background-color: rgba(0,0,0,0.7);
-   color: teal;
    /* Animation: quand ca bouge de haut en bas */
    animation-duration: 2s;
    animation-fill-mode: forwards; /* Ca garde le div à la position finale de l'animation */
+}
+#med>div {
+   margin: auto;
+   text-align: center;
+}
+#med,#med>div>* {
+   transition-duration: 600ms;
 }
 #progress { /* La bare de progres, son width change dynamiquement */
    transition-duration: 3s;
    position: fixed;
    height: 12px;
    bottom: 0;
-   background-color: teal;
 }
-input,button {
+input,button,select {
    font-family: 'MuseoModerno', cursive;
    text-align: center;
    background-color: rgba(0,0,0,0);
-   color: teal;
    outline: none;
-   border: 1px solid teal;
+   border: 1px solid;
+}
+select {
+   padding: 0px 5px;
 }

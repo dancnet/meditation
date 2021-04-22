@@ -8,13 +8,20 @@
 </head>
 <body>
 <div id="app">
-   <div id="background" :style="{filter: 'grayscale(' + grayscale +'%) brightness(' + brightness + '%)'}"></div>
+   <div id="background" ref="background" :style="{filter: 'grayscale(' + grayscale +'%) brightness(' + brightness + '%)'}"></div>
    <div id="progress" v-if="progress < 100" :style="{ width: progress + '%' }"></div>
    <div id="med" :style="{ 'animation-name': (meditate ? 'medfx2' : 'medfx1') }">
-      Je veux méditer pour
-      <input type="number" min="5" max="180" step="5" v-model="minutes" ref="minutes" size="3" v-on:keyup.enter="startMeditation()"> 
-      minutes.
-      <button @click="startMeditation()">Commencer</button>
+      <div>
+         Je veux méditer pour
+         <input type="number" min="5" max="180" step="5" v-model="minutes" ref="minutes" size="3" @keyup.enter="startMeditation()"> 
+         minutes.
+         <button @click="startMeditation()">Commencer</button>
+         <hr> 
+         Choisir un thème:
+         <select v-model="theme">
+            <option v-for="t in themes">{{ t.name }}</option>
+         </select>
+      </div>
    </div>
 </div>
 <script src="assets/script.js"></script>
